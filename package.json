@@ -4,7 +4,7 @@
   "description": "MY First project",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "npm cache clean; node app.js"
      },
   "author": "Lokdeep",
   "license": "ISC",
