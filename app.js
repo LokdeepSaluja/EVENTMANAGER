@@ -16,7 +16,7 @@ var commentRoutes=require("./routes/comment"),
     landingRoutes=require("./routes/landing");
 
 app.use(express.static(__dirname + "/public"));
-mongoose.connect("mongodb://localhost:27017/event",{useNewUrlParser: true , useUnifiedTopology: true });
+mongoose.connect("mongodb+srv://Lokdeep:rU7$*fp!W*eKw7*@cluster0-kgpvi.mongodb.net/test?retryWrites=true&w=majority",{useNewUrlParser: true , useUnifiedTopology: true });
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine",".ejs");
 app.use(flash());
@@ -52,6 +52,6 @@ app.use("/event",eventRoutes);
 app.use(landingRoutes);
 
 
-app.listen(3000,function(req,res){
+app.listen(80,function(req,res){
     console.log("The Server Started");
 });
