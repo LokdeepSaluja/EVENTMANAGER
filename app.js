@@ -52,6 +52,6 @@ app.use("/event",eventRoutes);
 app.use(landingRoutes);
 
 
-app.listen(80,function(req,res){
-    console.log("The Server Started");
+app.listen(process.env.PORT, process.env.IP, function(){
+   console.log("The YelpCamp Server Has Started!");
 });
