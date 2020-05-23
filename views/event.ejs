@@ -1,0 +1,37 @@
+<%- include('partials/header.ejs'); %>
+<div class="container">
+
+    
+
+<header class="jumbotron">
+    <h1>EVENTs</h1>
+    <p>Event all over the world.</p>
+    
+   <a href="/event/new" class="btn btn-primary btn-large">Add new event</a>
+</header>
+<div class="container">
+  <div class="row" style="display:flex; flex-wrap: wrap;">
+      
+  
+    <% event.forEach(function(event){ %>
+    <div class="col-sm-6 col-md-3">
+           
+        <div class="img-thumbnail">
+    
+              <img src="<%= event.image %>" alt="" class="img-thumbnail">
+                  <div class="caption" style="text-align:center;">
+                   <h4><%=  event.name %> </h4>
+                  </div>
+
+                  <div style="text-align:center;">
+                  <a class="btn btn-primary" href="/event/<%= event._id %>">More Info</a>
+                      
+                  </div>
+        </div>
+    </div>
+    <% }) %>
+    </div>
+</div>
+</div>
+
+<%- include('partials/footer'); %>

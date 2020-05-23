@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>Event Manager</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+<body>
+
+    
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQMAAADCCAMAAAB6zFdcAAAAilBMVEUAAAD///+NjY2goaU6Ojrg4OD8/PyioaaOjZJhYWH///2RkZH7+/uen6Pd3d2zs7P19fXW1tbPz8+Zmp9XV1e6urobGxtpaWl+fn6mp6uJiYkrKytcXFzx8fFycnLm5ubBwsQTExMiIiKwr7S+vr6Xl5YwMDBSUlJKSko9PUAvLy+0tbhDQ0OioqGjh6tgAAAEF0lEQVR4nO3c23aiMBQGYFM0TNVYFB2rrdVWbae1vP/rDajIwXBMlnsl/t+1F8mWPwcCdDoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFbpDh50GLxRd0TBE9NjQN0RBZ6OAnDGXqg70t5URwnCGoypO6LgKfoPlQ3ZkrojCjwtNUAUQmZHQQ+zo6CHwVF41VQCRIGzB+qOKPD0TArsg7oj7U21TIxYIEWMjoKWCjD2Tt2R9jAr6FsgIQqMUfdDAaKgb4Fk8l5hpakG1P1QoCsKI+qOKJBH4a3blMHrZNmswJlH3aqbepRm+4m6WTe1k9bglbpZNyVdIN1XFObSEfG+ojCTbpsRhTuLwqP0Mri3KMh8UTfrpoayifHeoiATUDfrpmRR4Gzdywge/lwMlrvetfWcuiMKZAMizw2TY+G4F/uJ9MoxeL8knxWyVr5z4rqOIzbS30yoO6JgV6MGCyeuQWEJ2DN1RxRUFoCxTXwZhIR8JmX8L3VH2pPPCunOsV66BId+X/ozs6NQxROpEmz7TF4Dk6MgWSDlbC81EMFCPnZwo4/Y5pUj4iRJglgUVszkKBSMcLF+Mi1GNSi6A8+tjgJ3ktHALzyEMPpcQX4HKWVWpwRmR6FqVhglSfDXJb+zOAqr1FXQK/shdT8UVEUhmRb9cdkEYmsUeHpa9OVbxfiXJkeh7MELzta+W6cEzPAolI0Hw2RdULBVjJkdhbJF4iEeDIq2imemR6GkBuN4MBCVz6hQ90NBela4KkYyLW6rSmByFILkvuno6mHl/fH2afSi3khyAzVzM9XkN/nS8ovAPXWDbu8zU4Ch0c8VtfWWHRCGBt8nby039NuS8EZGmRLMqJtD4T2zXlxTN4fEV+Yy+EfdHBL7dAlMfmldQbIt5Eav+lQkKyTuGXxmpuIltTow+SkCFc9JDWYf39/f3e7X48W07BntX2uummSFtPYXoaD+Gx1d6rbrcrllzBfieMOg9puO9uwrLl3aifJTxSvWzKOXl1hG+yAsgdvgcxif1G3X5bxC4p4fPXDkNni1yZ4oxCukrWhYAnuiEJ8yRCcqIjpVlD9oIvND3XRdfqLeRCcq51PFggeOJOyJwvLYn+OJij9ivF+/BvZEYXb85w/Cdf1x1LP6NTD44y8562gAGPthCSpOFe2NwnGFtAqnBH8TBqFJDeyJwpxx3g/XyGEJGsTA8K/j5QRhhzbieLDaYDgMa2BRFMbRbtERB9a0BiZ/8SInXCOHq8Nt84/i2HMO8xtNi+FWsf5e8cyiKCzDNbJYeE2GwxN7ZoXOxvNdx2s0FJxYcxet01kthFg1WiGfWBSFl0kQtPoskEVR+JlO39p8WHpgURQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHL+A5PCOaKmib9RAAAAAElFTkSuQmCC" width="30" height="30" alt="">
+            Events
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          
+
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+           
+            
+            
+          </ul>
+          <ul class="nav navbar-nav navbar-right" >
+          
+              
+             <% if(!currentUser){ %>
+               <li class="nav-item">
+                   <a class="nav-link" href="/login">Login</a>
+               </li>
+               <li class="nav-item">
+                   <a class="nav-link" href="/register">Sign Up</a>
+               </li>
+                        
+                        
+                    <% } else { %>
+                    <li class="nav-item">
+                   <a class="nav-link" href="#">Signed In As <%= currentUser.username %></a>
+               </li>
+                <li class="nav-item">
+                   <a class="nav-link" href="/logout">Logout</a>
+               </li>
+                        
+                        
+                    <% } %>
+            
+          </ul>
+          
+        </div>
+      </nav>
+      <div class="container">
+      <%if(error && error.length>0) {%>
+      
+        <div class="alert alert-danger" role="alert"><%=error%></div>
+      <%}%>
+      <%if(success && success.length>0) {%>
+      
+        <div class="alert alert-success" role="alert"><%=success%></div>
+      <%}%>
+      
+       
+</div>   

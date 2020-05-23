@@ -1,0 +1,167 @@
+body{
+    background-color:#000;
+}
+#landing-header {
+  z-index: 1;        /* 1 means coming outwards . z index is used only when position is relative*/
+  position: relative;
+  text-align: center;
+  padding-top: 40vh;  /* vh is view height */
+}
+#landing-footer {
+  z-index: 1;        /* 1 means coming outwards . z index is used only when position is relative*/
+  position: relative;
+  text-align: center;
+  margin-top: auto;
+  padding-top: 40vh;  /* vh is view height */
+}
+#landing-header h1 {
+  color: #fff;
+}
+.slideshow { 
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;         /* ensures background images are behind the other content(text ,button) */
+  list-style: none ;  /* removes bullet points */
+  margin: 0;
+  padding: 0;
+} 
+.slideshow li { 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;    /* will center the image perfectly on page */
+  background-repeat: no-repeat;
+  opacity: 0;            /* gives fading effect and sets opacity slowly to 1 */
+  z-index: 0;
+  animation: imageAnimation 25s linear infinite;  /* lasts for 50s, linear means animation speed will be same from starting to end */
+}                                                 /* infinite makes animation run forever. slideshow doesnt end */
+
+.slideshow li:nth-child(1) { 
+  background-image: url(http://i.imgur.com/K3mPv14.jpg) 
+}
+.slideshow li:nth-child(2) { 
+  background-image: url(http://i.imgur.com/SBEmFpv.jpg);
+  animation-delay: 5s; 
+}
+.slideshow li:nth-child(3) { 
+  background-image: url(http://i.imgur.com/emvhOnb.jpg);
+  animation-delay: 10s; 
+}
+.slideshow li:nth-child(4) { 
+  background-image: url(http://i.imgur.com/2LSMCmJ.jpg);
+  animation-delay: 15s; 
+}
+.slideshow li:nth-child(5) { 
+  background-image: url(http://i.imgur.com/TVGe0Ef.jpg);
+  animation-delay: 20s; 
+}
+
+@keyframes imageAnimation { 
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;  /* gives smooth transition as it moves from opacity 0 to 1 */
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}
+/* Older browser support - .no-cssanimations class added by modernizr */
+.no-cssanimations .slideshow li {
+    opacity: 1;
+}body{
+    background-color:#000;
+}
+#landing-header {
+  z-index: 1;        /* 1 means coming outwards . z index is used only when position is relative*/
+  position: relative;
+  text-align: center;
+  padding-top: 40vh;  /* vh is view height */
+}
+#landing-footer {
+  z-index: 1;        /* 1 means coming outwards . z index is used only when position is relative*/
+  position: relative;
+  text-align: center;
+  margin-top: auto;
+  padding-top: 40vh;  /* vh is view height */
+}
+#landing-header h1 {
+  color: #fff;
+}
+.slideshow { 
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;         /* ensures background images are behind the other content(text ,button) */
+  list-style: none ;  /* removes bullet points */
+  margin: 0;
+  padding: 0;
+} 
+.slideshow li { 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;    /* will center the image perfectly on page */
+  background-repeat: no-repeat;
+  opacity: 0;            /* gives fading effect and sets opacity slowly to 1 */
+  z-index: 0;
+  animation: imageAnimation 50s linear infinite;  /* lasts for 50s, linear means animation speed will be same from starting to end */
+}                                                 /* infinite makes animation run forever. slideshow doesnt end */
+
+.slideshow li:nth-child(1) { 
+  background-image: url(https://res.cloudinary.com/dwzmsvp7f/image/fetch/q_75,f_auto,w_1645/https%3A%2F%2Fmedia.insider.in%2Fimage%2Fupload%2Fc_crop%2Cg_custom%2Fv1519627962%2Fvltlogy23k1iid9pjffx.jpg) 
+}
+.slideshow li:nth-child(2) { 
+  background-image: url(https://media-exp1.licdn.com/dms/image/C4D1BAQFAC3o2eHS_vA/company-background_10000/0?e=2159024400&v=beta&t=EUdtqUGN2pXf17w9xlDLBdSI60wIgV4gI0W36q8NHto);
+  animation-delay: 10s; 
+}
+.slideshow li:nth-child(3) { 
+  background-image: url(https://in.bookmyshow.com/entertainment-news/wp-content/uploads/2018/01/Events-In-Chennai-810x422.jpg);
+  animation-delay: 20s; 
+}
+.slideshow li:nth-child(4) { 
+  background-image: url(https://m.economictimes.com/thumb/msid-74702612,width-1200,height-900,resizemode-4,imgsize-630698/8.jpg);
+  animation-delay: 30s; 
+}
+.slideshow li:nth-child(5) { 
+  background-image: url(https://d2ykob40sjriid.cloudfront.net/images/fc_2_0/banner3.jpg);
+  animation-delay: 40s; 
+}
+
+@keyframes imageAnimation { 
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;  /* gives smooth transition as it moves from opacity 0 to 1 */
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}
+/* Older browser support - .no-cssanimations class added by modernizr */
+.no-cssanimations .slideshow li {
+    opacity: 1;
+}

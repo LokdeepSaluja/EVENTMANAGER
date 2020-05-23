@@ -1,0 +1,18 @@
+<%- include('partials/header.ejs'); %>
+<div class="container" style="width:30%;">
+    <h1>New Comment <%= event.name %></h1>
+<form action="/event/<%=event.id%>/comments" method="POST" >
+  <div class="form-group">
+      <input  class="form-control" type="text" name="comment[text]" placeholder="Text">
+  </div>    
+
+     <div class="form-group">   
+      <button  class="btn btn-primary btn-large btn-block" type="">Submit!</button>
+   </div> 
+   <a href="/event">GO Back</a>    
+   <%= console.log("hi");%>
+  
+</form>
+</div>
+
+<%- include('partials/footer.ejs'); %>

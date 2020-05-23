@@ -1,0 +1,75 @@
+<%- include('partials/header.ejs'); %>
+<div class="container">
+        <div class="row">
+                  <div class="col-md-3">
+                      <p class="lead">EVents</p>
+                      <div class="list-group">
+                                     <li class="list-group-item active">Info 1</li>
+                                     <li class="list-group-item">Info 2</li>
+                                     <li class="list-group-item">Info 3</li>
+                                                        
+                    </div>
+        </div>   
+        <div class="col-md-9">
+            <div class="thumbnail">
+                <img  class="img-responsive" src="<%=event.image%>" alt="">
+                <div class="caption-full">
+                <h4 class="pull-right"><%=event.price%></h4>
+                <p><%=event.name%></p>
+                <p><%=event.description%></p>
+                <p>Submitted by:<%=event.author.username%></p>   
+                <% if(currentUser && event.author.id.equals(currentUser._id)) {%>
+                <p>
+                <a class="btn btn-warning" href="/event/<%=event._id%>/edit">Edit</a>
+                </p>
+                <form action="/event/<%=event._id%>?_method=DELETE" method="POST">
+                      <button class="btn btn-danger">Delete</button> 
+        
+                </form>
+                <%}%>
+            </div>                         
+        </div>
+                      
+        </div> 
+</div>
+    
+
+<div class="card card-body bg-light">
+                <div class="text-Right">
+                <p>
+                     <a class="btn btn-success" href="/event/<%=event._id%>/comments/new">Add comment</a>
+                </p>
+                <hr>
+                
+                <%event.comments.forEach(function(comment){%>
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="text-Left">
+                            <strong><%=comment.author.username%></strong>
+                            
+                            <p>
+                                <%= comment.text %> 
+                            </p>
+                            <div class="text-Right">
+                                <span class="pull-right">10 days ago</span>
+                            </div>
+                        </div>
+                        <<hr>
+                        
+                            
+                            <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+                            <a class="btn btn-xs btn-warning" 
+                               href="/event/<%=event._id%>/comments/<%=comment._id%>/edit">Edit comment</a>
+                            <form action="/event/<%=event._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST" class="btn btn-xs btn-danger" value="Delete">
+                                <input type="Submit" class="btn btn-xs btn-danger" value="Delete">
+                            </form >
+                            <%}%>
+                    </div>
+                 <% }); %>
+    
+</div>
+
+    
+ 
+
+<%- include('partials/footer.ejs'); %>
